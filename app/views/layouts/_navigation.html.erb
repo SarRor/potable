@@ -1,0 +1,31 @@
+<div class="topnav" id="myTopnav">
+  <%= link_to 'INICIO', root_path %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
+    <%= link_to "Editar perfil", edit_user_registration_path %>
+  <% else %>
+    <%= link_to 'Iniciar Sesión', new_user_session_path %>
+    <%= link_to 'Registrarse', new_user_registration_path %>
+  <% end %>
+
+  <% if user_signed_in? and current_user.is_admin? %>
+    <%= link_to 'Agregar usuario del agua', new_usuario_path %>
+    <%= link_to 'Lista de usuarios', usuarios_path %>
+  <% end %>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>

@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <b><%= value %></b>
+  </div>
+<% end %>

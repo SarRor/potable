@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantidad: 9.99
+  concepto: MyString
+  fecha_de_pago: 2019-05-28 22:23:20
+  usuario: one
+  user: one
+
+two:
+  cantidad: 9.99
+  concepto: MyString
+  fecha_de_pago: 2019-05-28 22:23:20
+  usuario: two
+  user: two

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <title>Comité de Agua Potable de Ocotlán</title>
+    <meta name="description" content="Portal del sistema operador del agua potable de San Francisico Ocotlán, Puebla.">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

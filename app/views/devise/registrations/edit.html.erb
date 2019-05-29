@@ -1,0 +1,51 @@
+<div class="form-devise">
+  <h2 class="center-tx">Editar usuario</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :email %></b>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :nombre %></b>
+        <%= f.text_field :nombre, autocomplete: "nombre", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :password, 'Password' %></b> <i>(dejar en blanco si no desea cambiarlo)</i>
+        <%= f.password_field :password, autocomplete: "new-password", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :password_confirmation, 'Confirmación de password' %></b>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :current_password, 'Password actual' %></b> <i>(Lo necesitamos para confirmar los cambios)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <%= f.submit 'Actualizar', class:"btn default space-v" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-s-off-2 col-s-8">
+      <br>
+      <p><%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete %></p>
+    </div>
+  </div>
+</div>

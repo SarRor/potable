@@ -1,0 +1,37 @@
+<div class="form-devise">
+  <h2 class="center-tx">Regístrate</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :email %></b>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :nombre %></b>
+        <%= f.text_field :nombre, autocomplete: "nombre", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :password, 'Password' %></b> <i>(6 caracteres mínimo)</i>
+        <%= f.password_field :password, autocomplete: "new-password", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <b><%= f.label :password_confirmation, 'Confirmación de password' %></b>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-ctr space-v" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-s-off-2 col-s-8">
+        <%= f.submit 'Registrarse', class:"btn default space-v" %>
+      </div>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

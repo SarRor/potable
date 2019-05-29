@@ -1,0 +1,51 @@
+<%= form_with(model: usuario, local: true) do |f| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-s-off-2 col-s-8">
+      <b><%= f.label :nombre, 'Nombre del usuario del agua' %></b>
+      <%= f.text_field :nombre, autocomplete: "nombre", autofocus: true, class:"input-ctr space-v" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-s-off-2 col-s-7">
+      <b><%= f.label :calle %></b>
+      <%= select(:usuario, :calle, calles_con_agua, {}, {class:""}) %>
+    </div>
+    <div class="col-s-1">
+      <b><%= f.label :numero, 'Número' %></b>
+      <%= f.text_field :numero, autocomplete: "numero", class:"input-ctr space-v" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-s-off-2 col-s-8">
+      <b><%= f.label :telefono %></b>
+      <%= f.text_field :telefono, autocomplete: "telefono", class:"input-ctr space-v" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-s-off-2 col-s-8">
+      <b><%= f.label :email %></b>
+      <%= f.email_field :email, autocomplete: "email", class:"input-ctr space-v" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-s-off-2 col-s-8">
+      <%= f.submit 'Crear usuario del agua', class:"btn default space-v" %>
+    </div>
+  </div>
+<% end %>

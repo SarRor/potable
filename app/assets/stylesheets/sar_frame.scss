@@ -1,0 +1,152 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: "Lucida Sans", sans-serif;
+  margin: 0;
+  font-size: 100%;
+}
+.container{
+  max-width:1250px;
+  margin: auto;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  float: left;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+/* For tablets: */
+  .col-s-1 {width: 8.333%;}
+  .col-s-2 {width: 16.666%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.333%;}
+  .col-s-5 {width: 41.666%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.333%;}
+  .col-s-8 {width: 66.666%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.333%;}
+  .col-s-11 {width: 91.666%;}
+  .col-s-12 {width: 100%;}
+
+  .col-s-off-1 {margin-left: 8.333%;}
+  .col-s-off-2 {margin-left: 16.666%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-d-1 {width: 8.333%;}
+  .col-d-2 {width: 16.666%;}
+  .col-d-3 {width: 25%;}
+  .col-d-4 {width: 33.333%;}
+  .col-d-5 {width: 41.666%;}
+  .col-d-6 {width: 50%;}
+  .col-d-7 {width: 58.333%;}
+  .col-d-8 {width: 66.666%;}
+  .col-d-9 {width: 75%;}
+  .col-d-10 {width: 83.333%;}
+  .col-d-11 {width: 91.666%;}
+  .col-d-12 {width: 100%;}
+
+  .col-d-off-1 {margin-left: 8.333%;}
+  .col-d-off-2 {margin-left: 16.666%;}
+}
+.center-tx{
+  text-align: center;
+}
+.responsive{
+  width: 100%;
+  height: auto;
+}
+.btn {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.success {background-color: #009900;} /* Green */
+.success:hover {background-color: #00cc00;}
+.info {background-color: #00a3cc;} /* Blue */
+.info:hover {background: #3385ff;}
+.warning {background-color: #996600;} /* Orange */
+.warning:hover {background: #cc8800;}
+.danger {background-color: #990000;} /* Red */
+.danger:hover {background: #cc0000;}
+.default {background-color: #737373;} /* Gray */
+.default:hover {background: #8c8c8c;}
+// Alerts_______________________________________________________________________
+.alert {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+.alert-success{
+  background-color: #b3ffb3;
+  color: #009900;
+}
+.alert-info{
+  background-color: #b3f0ff;
+  color: #007a99;
+}
+.alert-warning{
+  background-color: #ffe6b3;
+  color: #996600;
+}
+.alert-danger{
+  background-color: #ffb3b3;
+  color: #990000;
+}
+.alert-alert{
+  background-color: #ffffb3;
+  color: #999900;
+}
+.alert-notice{
+  background-color: #b3b3ff;
+  color: #000099;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+// Devise forms_________________________________________________________________
+.form-devise{
+  background-color: #f2f2f2;
+  margin: 1.5em 0;
+  padding: 2.5em 0;
+}
+.input-ctr{
+  width: 100%;
+  font-size: 1.2em;
+}
+.space-v{
+  margin-bottom: 0.7em;
+}
