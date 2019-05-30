@@ -6,15 +6,21 @@ class PagosController < ApplicationController
     usuario = Usuario.find(params[:id])
     # debugger
     @pago = Pago.new(pago_params)
-    @pago.usuario_id = params[:id]
+    @pago.update(usuario_id: params[:id], user_id: current_user.id)
     if @pago.save
       flash[:success] = 'El pago fue realizdo exitosamente.'
       redirect_to usuario_path(usuario)
-    else
-      render :new
     end
   end
 
+  def update
+    if @pago.update(pago_params)
+      flash[:success] = 'El pago fue actualizado exitosamente.'
+      redirect_to @pago
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @pago.destroy

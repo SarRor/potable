@@ -3,8 +3,7 @@
 </p>
 
 <% if user_signed_in? and current_user.is_admin? %>
-  <%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-  <%= link_to 'Back', usuarios_path %>
+  <%= link_to 'Editar usuario', edit_usuario_path(@usuario) %> |
 <% end %>
 <br>
 
@@ -16,19 +15,19 @@
   <div class="row">
     <div class="col-s-off-2 col-s-8">
       <b><%= f.label :cantidad %></b>
-      <%= f.text_field :cantidad, autocomplete: "cantidad", autofocus: true, class:"input-ctr space-v" %>
+      <%= f.text_field :cantidad, autocomplete: "cantidad", autofocus: true, class:"input-ctr space-v", maxlength: 5, required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-s-off-2 col-s-8">
       <b><%= f.label :fecha_de_pago %></b>
-      <%= f.date_field :fecha_de_pago, autocomplete: "fecha_de_pago", class:"input-ctr space-v" %>
+      <%= f.date_field :fecha_de_pago, autocomplete: "fecha_de_pago", class:"input-ctr space-v", required: true %>
     </div>
   </div>
   <div class="row">
     <div class="col-s-off-2 col-s-8">
       <b><%= f.label :concepto %></b>
-      <%= f.text_field :concepto, autocomplete: "concepto", class:"input-ctr space-v" %>
+      <%= f.text_field :concepto, autocomplete: "concepto", class:"input-ctr space-v", maxlength: 80, required: true %>
     </div>
   </div>
 

@@ -26,28 +26,22 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(usuario_params)
 
-    respond_to do |format|
-      if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
-        format.json { render :show, status: :created, location: @usuario }
-      else
-        format.html { render :new }
-        format.json { render json: @usuario.errors, status: :unprocessable_entity }
-      end
+    if @usuario.save
+      flash[:success] = 'El usuario fue creado exitosamente.'
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /usuarios/1
   # PATCH/PUT /usuarios/1.json
   def update
-    respond_to do |format|
-      if @usuario.update(usuario_params)
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully updated.' }
-        format.json { render :show, status: :ok, location: @usuario }
-      else
-        format.html { render :edit }
-        format.json { render json: @usuario.errors, status: :unprocessable_entity }
-      end
+    if @usuario.update(usuario_params)
+      flash[:success] = 'El usuario fue actualizado exitosamente.'
+      redirect_to @usuario
+    else
+      render :edit
     end
   end
 
@@ -55,10 +49,8 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1.json
   def destroy
     @usuario.destroy
-    respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'Usuario was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:danger] = 'El usuario fue eliminado exitosamente.'
+    redirect_to usuarios_url
   end
 
   private
@@ -69,6 +61,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nombre, :calle, :numero, :telefono, :email)
+      params.require(:usuario).permit(:nombre, :calle, :numero, :telefono, :email, :id)
     end
 end
