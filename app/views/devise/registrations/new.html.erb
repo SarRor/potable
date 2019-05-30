@@ -6,25 +6,25 @@
     <div class="row">
       <div class="col-s-off-2 col-s-8">
         <b><%= f.label :email %></b>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-ctr space-v" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-ctr space-v", maxlength: 50, required: true %>
       </div>
     </div>
     <div class="row">
       <div class="col-s-off-2 col-s-8">
         <b><%= f.label :nombre %></b>
-        <%= f.text_field :nombre, autocomplete: "nombre", class:"input-ctr space-v" %>
+        <%= f.text_field :nombre, autocomplete: "nombre", class:"input-ctr space-v", maxlength: 80, required: true %>
       </div>
     </div>
     <div class="row">
       <div class="col-s-off-2 col-s-8">
         <b><%= f.label :password, 'Password' %></b> <i>(6 caracteres mínimo)</i>
-        <%= f.password_field :password, autocomplete: "new-password", class:"input-ctr space-v" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"input-ctr space-v", maxlength: 30, required: true %>
       </div>
     </div>
     <div class="row">
       <div class="col-s-off-2 col-s-8">
         <b><%= f.label :password_confirmation, 'Confirmación de password' %></b>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-ctr space-v" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-ctr space-v", maxlength: 30, required: true %>
       </div>
     </div>
     <div class="row">

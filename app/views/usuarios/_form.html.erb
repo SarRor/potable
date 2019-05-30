@@ -14,30 +14,27 @@
   <div class="row">
     <div class="col-s-off-2 col-s-8">
       <b><%= f.label :nombre, 'Nombre del usuario del agua' %></b>
-      <%= f.text_field :nombre, autocomplete: "nombre", autofocus: true, class:"input-ctr space-v" %>
+      <%= f.text_field :nombre, autocomplete: "nombre", autofocus: true, class:"input-ctr space-v", maxlength: 80, required: true %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-s-off-2 col-s-7">
+    <div class="col-s-off-2 col-s-4">
       <b><%= f.label :calle %></b>
-      <%= select(:usuario, :calle, calles_con_agua, {}, {class:""}) %>
+      <%= select(:usuario, :calle, calles_con_agua, {}, {class:"", maxlength: 40, required: true}) %>
     </div>
-    <div class="col-s-1">
+    <div class="col-s-4">
       <b><%= f.label :numero, 'Número' %></b>
-      <%= f.text_field :numero, autocomplete: "numero", class:"input-ctr space-v" %>
+      <%= f.text_field :numero, autocomplete: "numero", class:"input-ctr space-v", maxlength: 10, required: true %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-s-off-2 col-s-8">
+    <div class="col-s-off-2 col-s-4">
       <b><%= f.label :telefono %></b>
       <%= f.text_field :telefono, autocomplete: "telefono", class:"input-ctr space-v" %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-s-off-2 col-s-8">
+    <div class="col-s-4">
       <b><%= f.label :email %></b>
       <%= f.email_field :email, autocomplete: "email", class:"input-ctr space-v" %>
     </div>

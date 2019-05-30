@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, except: [:show, :index]
   # GET /usuarios
   # GET /usuarios.json
   def index
